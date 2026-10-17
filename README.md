@@ -1,313 +1,438 @@
-
 <div align="center">
 
-<img src="src/main/resources/static/img/logo.png" alt="Mergab logo" width="290" />
+<img src="src/main/resources/static/img/logo.png" alt="MERGAB logo" width="240" />
 
-# MERGAB | مرقاب
+# MERGAB | مِرقاب
 
-### Predict the crowd. Simulate the response. Improve the experience.
+### See the crowd. Predict the pressure. Guide the experience.
 
-**An intelligent crowd-management prototype designed for the visitor experience at Expo Riyadh 2030.**
+**An intelligent crowd-management and visitor navigation platform inspired by the operational needs of Expo Riyadh 2030.**
 
-**مرقاب — منصة ذكية لرصد حركة الحشود، والتنبؤ بالازدحام، ومحاكاة القرارات التشغيلية في إكسبو الرياض 2030.**
+**منصة ذكية لرصد حركة الحشود، والتنبؤ بمستويات الازدحام، ومحاكاة تدفق الزوار، وتوجيههم عبر خريطة تفاعلية.**
 
-![Java](https://img.shields.io/badge/Java-17-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.1-6DB33F?style=flat-square&logo=springboot&logoColor=white)
-![Python](https://img.shields.io/badge/Python-AI%20Service-3776AB?style=flat-square&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-Predictions-009688?style=flat-square&logo=fastapi&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Functional%20Prototype-1D493D?style=flat-square)
+![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.1.1-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+![Python](https://img.shields.io/badge/Python-AI_Service-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-Prediction-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![MariaDB](https://img.shields.io/badge/MariaDB%20%2F%20MySQL-Database-003545?style=for-the-badge&logo=mariadb&logoColor=white)
 
-**Team OMINX · Expo 2030 Challenge**
+**Team OMINX · Expo 2030 Challenge · Tuwaiq Academy**
+
+[Overview](#-overview) · [Features](#-core-features) · [Architecture](#-system-architecture) · [Getting Started](#-getting-started) · [Team](#-meet-team-ominx)
 
 </div>
 
 ---
 
-## Overview
+## ✨ Overview
 
-Large exhibitions bring together visitors, events, facilities, and interconnected walking routes. When attendance rises around a popular event or a busy entrance, congestion can spread between zones before operators have enough time to respond.
+Large-scale events are dynamic. Visitor arrivals, popular exhibitions, facility demand, and changing crowd patterns can create bottlenecks across interconnected spaces. Responding only after congestion becomes visible may be too late.
 
-**Mergab** brings crowd visibility, operational simulation, and visitor navigation into one system. It helps organizers understand occupancy, explore possible crowd-flow scenarios, and identify potential congestion, while giving visitors an easier way to explore the venue.
+**MERGAB (مِرقاب)** brings together **live occupancy monitoring, event-aware simulations, congestion prediction, and interactive wayfinding** in a single platform.
 
-The project focuses on a central idea: **move from reacting to congestion to anticipating it.**
+It is designed to help organizers understand crowd conditions and explore operational decisions—while giving visitors a clearer, more comfortable way to navigate the venue.
 
-## The Challenge & Our Approach
+> **Our mission:** Turn crowd data into timely insight, and insight into a better visitor experience.
 
-| Challenge | Mergab's approach |
-| --- | --- |
-| Congestion around popular areas and events | Zone-level occupancy tracking and congestion forecasting |
-| Operational decisions made with limited visibility | Event-aware crowd simulations and minute-by-minute results |
-| Visitors moving through interconnected, capacity-limited areas | Zone connections, routes, and congestion-aware route recommendations |
-| Difficulty finding facilities and activities | An interactive venue map with facilities, events, and navigation tools |
-| Visitor flows changing around prayer times | Prayer-time information and prayer-aware simulation logic |
+### The Problem We Address
 
-## Key Features
+| Challenge | MERGAB's Approach |
+| :--- | :--- |
+| Limited visibility into crowd density | QR-based zone entry/exit records and occupancy dashboards |
+| Congestion spreading between areas | Connected zones, walkway capacities, and movement simulation |
+| Difficulty anticipating peak demand | Event-driven arrival modeling and short-horizon congestion prediction |
+| Visitors struggling to find a route or facility | Interactive map, facility access paths, and route recommendations |
+| Operational decisions without clear comparisons | Simulation snapshots, queue tracking, reports, and interventions |
+| Crowd movement changing around prayer times | Prayer-time integration and prayer-aware simulation logic |
 
-### For Expo Organizers
+---
 
-- **Operations dashboard:** View zone occupancy, upcoming events, crowd indicators, and early-warning information.
-- **Zone management:** Configure zone capacities, initial visitor counts, and map boundaries.
-- **Connected venue map:** Define connections and walking paths between zones, including flow-capacity constraints.
-- **Event management:** Associate events with zones, schedules, and expected attendance.
-- **Crowd simulation:** Model arrivals, movement, queues, and occupancy over time; generate per-zone simulation snapshots.
-- **Scenario exploration:** Run and continue simulations to study changes in crowd conditions over time.
-- **Congestion forecasting:** Request short-horizon occupancy predictions and classify congestion risk.
-- **Early warnings:** Review zone-level forecasts with risk indicators and suggested responses.
-- **Intervention management:** Record operational interventions and associate them with simulations.
-- **Reports and analytics:** Explore occupancy timelines, peak activity, and downloadable CSV results.
-- **Visitor check-in:** Use visitor QR tokens to register zone entry and exit and review active visits.
+## 🚀 Core Features
 
-### For Expo Visitors
+### 🧭 Interactive Expo Map & Smart Navigation
 
-- **Interactive Expo map:** Explore the venue, its zones, pathways, and facilities.
-- **Discover events:** Browse scheduled activities, their locations, and relevant venue information.
-- **Find nearby facilities:** Locate services such as restrooms and prayer rooms using map positions or geographic coordinates.
-- **Route recommendations:** Request a route and, where available, an alternative based on the venue's connected zones and simulation data.
-- **Personal visitor QR code:** Access a QR code in the visitor account for attendance check-in.
-- **Prayer-time support:** View daily prayer times for Riyadh and user-specific prayer alerts.
-- **Arabic and English interface:** Navigate visitor pages with bilingual UI support.
+- Explore **mapped zones and their boundaries**, with live crowd-level indicators.
+- Display **connections between zones**, internal walking paths, and mapped facilities.
+- Support **direction-aware walking/access paths** and facility-specific connections.
+- Locate events, facilities, and nearby services within the venue.
+- Recommend routes between zones using the venue network and available simulation context.
+- Present crowd conditions and alternative navigation options to visitors.
 
-### Platform & Access
+### 📊 Organizer Operations Center
 
-- Role-based accounts for **Admin**, **Organizer**, and **Visitor**.
-- Authentication and password hashing with Spring Security and BCrypt.
-- Email-based registration and password-recovery support.
-- REST APIs used by the web interfaces and simulation services.
+- Monitor occupancy and crowd distribution across all configured zones.
+- Create and manage **zones, capacities, mapped boundaries, and walking connections**.
+- Configure **facilities and access paths**, including route direction and availability.
+- Manage event locations, schedules, and expected visitor demand.
+- View operational analytics, simulation results, and downloadable CSV reports.
+- Review early-warning indicators to identify areas requiring attention.
 
-## How Mergab Works
+### 🎬 Crowd-Flow Simulation
+
+- Run **time-based simulations** of movement across connected venue zones.
+- Account for **zone capacities, connection throughput, queues, and visitor flow**.
+- Model arrivals influenced by scheduled events and historical attendance references.
+- Incorporate prayer-related movement into supported simulation scenarios.
+- Store **minute-by-minute occupancy and queue snapshots** for analysis.
+- Explore operational interventions and continue simulation scenarios.
+
+### 🤖 Congestion Prediction & Early Warnings
+
+- Send recent simulation snapshots from the Java backend to a **Python/FastAPI prediction service**.
+- Estimate near-future zone occupancy and classify congestion as **LOW, MEDIUM, or HIGH**.
+- Compare predicted occupancy against configured zone capacity.
+- Surface zone-level early warnings in the organizer experience.
+
+> **Technical transparency:** The prediction service currently included in `mirqab-ai/` implements a **recent-snapshot trend-based baseline**, not a validated production ML model. No predictive-accuracy percentage is claimed. The Java backend also contains an analysis integration designed to call `/analyze`, but that endpoint is **not implemented** by the bundled FastAPI application.
+
+### 🎟️ Visitor Experience & QR Check-In
+
+- Visitor registration, account management, and personal QR generation.
+- QR-based **check-in and check-out** by organizers.
+- Prevent simultaneous active visits across different zones.
+- Enforce zone capacity checks during check-in.
+- View visit history and support manual check-out when needed.
+- Browse upcoming events, venue facilities, and the interactive map.
+- Access **Arabic-first pages with English-language support** in the visitor experience.
+
+### 🕌 Prayer-Time Awareness
+
+- Retrieve Riyadh prayer times using the **AlAdhan API**.
+- Help visitors find prayer facilities and view daily prayer times.
+- Support prayer preferences and prayer-related movement in simulation scenarios.
+- Provide fallback sample timings when the external prayer service is unavailable.
+
+### 🔐 Accounts & Administration
+
+- **Role-based access:** `ADMIN`, `ORGANIZER`, and `VISITOR`.
+- Authentication with **Spring Security** and password hashing via **BCrypt**.
+- Admin user management and organizer registration.
+- Email templates for welcome messages and password recovery.
+- Password reset by time-limited verification code.
+
+---
+
+## 🏗️ System Architecture
 
 ```mermaid
 flowchart LR
-    A[Venue zones, paths, events & attendance] --> B[Spring Boot platform]
-    B --> C[Crowd simulation]
-    C --> D[Occupancy and queue snapshots]
-    D --> E[Python prediction service]
-    E --> F[Congestion levels & early warnings]
-    D --> G[Reports and route recommendations]
-    B --> H[Organizer dashboard]
-    B --> I[Visitor web experience]
-    F --> H
-    G --> H
-    G --> I
+    U[Visitors] --> WEB[Web UI]
+    O[Organizers / Admins] --> WEB
+    WEB --> API[Spring Boot REST API]
+    API <--> DB[(MariaDB / MySQL)]
+    API --> SIM[Crowd Simulation]
+    SIM --> DB
+    API --> AI[Python / FastAPI]
+    AI --> API
+    API --> EXT[AlAdhan API / Email]
+    API --> QR[ZXing QR Codes]
 ```
 
-1. **Model the venue:** Define zones, capacities, boundaries, and connections.
-2. **Provide operational inputs:** Add events, historical attendance references, and initial occupancy values.
-3. **Simulate movement:** Calculate zone occupancy and queues across a time-based scenario.
-4. **Assess congestion:** Use prediction results and warning indicators to identify areas that may become crowded.
-5. **Support decisions:** Inspect reports, consider interventions, and help visitors navigate the venue.
+### From Venue Data to Decisions
 
-## Data & AI
+```mermaid
+flowchart TD
+    A[Configure zones, boundaries, routes & facilities]
+    B[Add events and demand inputs]
+    C[Register visitors via QR check-in / check-out]
+    D[Live zone occupancy]
+    E[Run a crowd-flow simulation]
+    F[Minute-by-minute occupancy & queue snapshots]
+    G[Predict congestion]
+    H[Early warnings, reports & route guidance]
 
-Mergab's data pipeline combines:
+    A --> D
+    C --> D
+    A --> E
+    B --> E
+    E --> F
+    F --> G
+    G --> H
+    F --> H
+    D --> H
+```
 
-- **Historical attendance context**, including data gathered by the team from Expo Osaka.
-- **Venue configuration:** zones, capacities, connections, and mapped facilities.
-- **Event information:** dates, locations, and expected demand.
-- **Visitor activity:** QR-based check-in/check-out and zone occupancy records.
-- **Simulation outputs:** time-indexed occupancy and queue-length snapshots.
-- **Prayer times:** retrieved through the AlAdhan API, with a fallback for service outages.
+**Two data contexts are intentionally distinct:**
 
-The team has developed AI models using historical Expo Osaka data. The version of the Python/FastAPI service currently included in this archive is available in [`mirqab-ai/`](mirqab-ai/): its packaged `/predict` endpoint estimates occupancy over a configurable horizon and returns **LOW**, **MEDIUM**, or **HIGH** congestion levels. The Spring Boot backend also exposes early-warning and analysis integration endpoints.
+QR check-in/out provides *recorded live occupancy*, whereas simulations generate *scenario snapshots*.
 
-> **Prototype note:** The packaged `/predict` implementation uses a snapshot-trend baseline; the team's trained-model work and additional AI features are not fully represented by the files in this archive. The final README will document the merged AI implementation and recorded evaluation metrics. No accuracy percentage is claimed without a recorded evaluation.
+The prediction service uses simulation snapshots, so simulated forecasts should not be presented as direct measurements of the real crowd.
 
-## Technology Stack
+---
 
-| Layer | Technologies |
-| --- | --- |
-| Backend | Java 17, Spring Boot 4.1.1, Spring MVC, Spring Data JPA |
-| Frontend | HTML, CSS, JavaScript, Thymeleaf |
-| Database | MySQL |
-| AI service | Python, FastAPI, Pydantic, Uvicorn |
-| Security | Spring Security, BCrypt, role-based authorization |
-| Integrations | AlAdhan Prayer Times API, SMTP email, ZXing QR-code generation |
-| Testing | JUnit / Spring Boot Test, pytest, Postman |
-| Collaboration | Git, GitHub |
+## 🛠️ Tech Stack
 
-## Repository Structure
+| Layer | Technology |
+| :--- | :--- |
+| Backend | **Java 17**, **Spring Boot 4.1.1**, Spring MVC, Spring Data JPA, Hibernate |
+| Frontend | **HTML5**, **CSS3**, **JavaScript**, **Thymeleaf** |
+| Database | **MariaDB / MySQL** |
+| Prediction Service | **Python**, **FastAPI**, Pydantic, Uvicorn |
+| Security | **Spring Security**, BCrypt, role-based authorization |
+| QR Codes | **ZXing** |
+| External Integrations | **AlAdhan Prayer Times API**, SMTP Email |
+| Testing | **JUnit / Spring Boot Test**, **pytest**, Postman |
+| Collaboration | **Git**, **GitHub**, Team Integration Workflows |
+
+---
+
+## 📂 Project Structure
 
 ```text
 Mergab/
-├── mirqab-ai/                          # Python prediction API and tests
+├── mirqab-ai/
 │   ├── main.py
 │   ├── predictor.py
 │   ├── schemas.py
-│   └── requirements.txt
+│   ├── requirements.txt
+│   └── test_*.py
+│
 ├── src/
 │   ├── main/
 │   │   ├── java/com/example/mergab/
-│   │   │   ├── Config/              # Security and HTTP configuration
-│   │   │   ├── Controller/          # REST endpoints and page routes
+│   │   │   ├── Config/
+│   │   │   ├── Controller/
 │   │   │   ├── DTO/
 │   │   │   ├── Model/
 │   │   │   ├── Repository/
-│   │   │   ├── Service/             # Business logic and integrations
-│   │   │   └── Simulation/          # Crowd and event-driven simulation
+│   │   │   ├── Service/
+│   │   │   └── Simulation/
+│   │   │
 │   │   └── resources/
-│   │       ├── static/              # CSS, JavaScript, map assets, images
-│   │       ├── templates/           # Visitor, organizer and admin pages
+│   │       ├── templates/
+│   │       │   ├── admin/
+│   │       │   ├── organizer/
+│   │       │   └── visitor/
+│   │       │
+│   │       ├── static/
+│   │       │   ├── css/
+│   │       │   ├── js/
+│   │       │   ├── map/
+│   │       │   └── img/
+│   │       │
 │   │       └── application.properties
-│   └── test/                         # Java application and simulation tests
+│   │
+│   └── test/
+│
 ├── pom.xml
 ├── mvnw
-└── mvnw.cmd
+├── mvnw.cmd
+└── README.md
 ```
 
-## Getting Started
+---
 
-### Prerequisites
+## ⚙️ Getting Started
 
-- **Java 17**
-- **MySQL** server
-- **Python 3** and `pip` (for the prediction service)
-- **Maven** or the Maven wrapper included in the repository
+### Requirements
 
-### 1. Configure the Database
+- JDK **17 or newer**
+- Maven or Maven Wrapper
+- MariaDB / MySQL
+- Python 3 and pip
 
-Create a MySQL database:
+### 1. Create the Database
 
 ```sql
-CREATE DATABASE Mergab;
+CREATE DATABASE Mergab
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
 ```
 
-Review `src/main/resources/application.properties` and set the local database connection and credentials. The snapshot supplied for this README uses **port 4306**; change it if your MySQL instance uses another port (such as 3306).
-
-For example, the configuration can be made environment-variable driven:
+Update `src/main/resources/application.properties` to match your local database configuration.
 
 ```properties
-spring.datasource.url=${DB_URL:jdbc:mysql://localhost:4306/Mergab}
-spring.datasource.username=${DB_USERNAME:root}
-spring.datasource.password=${DB_PASSWORD:}
+spring.datasource.url=jdbc:mysql://localhost:3306/Mergab
+spring.datasource.username=root
+spring.datasource.password=YOUR_LOCAL_PASSWORD
+spring.jpa.hibernate.ddl-auto=update
 ```
 
-> The example above is a **recommended configuration change**, not a claim that environment-variable database settings are already implemented. Do not commit real passwords, API keys, or production credentials.
+> **Compatibility note:** The project uses Hibernate 7. Older MariaDB versions (such as 10.4) may create tables but fail to add some foreign-key constraints automatically. Use a compatible database/version and verify the foreign keys before inserting linked data.
 
-### 2. Run the Python Prediction Service
+### 2. Start the Python Prediction API
 
-From the project root:
+Open a terminal in the project root.
+
+**Windows (PowerShell):**
 
 ```powershell
 cd mirqab-ai
 python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-python -m uvicorn main:app --reload --port 8001
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m uvicorn main:app --host 127.0.0.1 --port 8001
 ```
 
-On macOS/Linux, activate the environment using `source .venv/bin/activate`.
+**macOS / Linux:**
 
-- Health check: **http://127.0.0.1:8001/health**
-- API docs: **http://127.0.0.1:8001/docs**
+```bash
+cd mirqab-ai
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m uvicorn main:app --host 127.0.0.1 --port 8001
+```
 
-The Spring Boot snapshot calls the prediction API on **port 8001**. Use that port unless you also update the backend configuration.
+**Service URLs:**
 
-### 3. Run Spring Boot
+- Health Check: `http://127.0.0.1:8001/health`
+- Swagger UI: `http://127.0.0.1:8001/docs`
 
-Open a **second terminal**, from the project root:
+The Spring Boot prediction client communicates with:
 
-**Windows**
+```text
+http://127.0.0.1:8001/predict
+```
+
+### 3. Start Spring Boot
+
+From a second terminal, in the project root:
+
+**Windows:**
 
 ```powershell
 .\mvnw.cmd spring-boot:run
 ```
 
-**macOS / Linux**
+**macOS / Linux:**
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-Open **http://localhost:8080** (the default Spring Boot port when not overridden).
+Open:
 
-### 4. Optional Email Configuration
+**http://localhost:8080**
 
-Email features use SMTP. The current project expects `MAIL_USERNAME` and `MAIL_PASSWORD` environment variables for Gmail SMTP. Configure valid credentials in your local environment if you want to test registration emails or password recovery.
+### 4. Optional Email Setup
 
-## Selected API Endpoints
+Welcome emails and password reset emails use SMTP.
 
-The REST API uses the `/api/v1` prefix.
+The application configuration supports:
 
-| Method | Endpoint | Purpose |
-| --- | --- | --- |
-| `GET` | `/zone/get` | List Expo zones |
-| `GET` | `/zone-connection/get` | List zone connections |
-| `GET` | `/expo-event/get-upcoming` | List upcoming events |
-| `GET` | `/facility/get` | List facilities |
-| `GET` | `/prayer/today` | Get today's prayer times |
+```properties
+MAIL_USERNAME
+MAIL_PASSWORD
+```
+
+Provide valid SMTP credentials through environment variables to enable email functionality.
+
+> **Security:** Never commit real database passwords, SMTP credentials, API keys, personal QR tokens, or identifiable visitor records.
+
+### 5. Prepare Demonstration Data
+
+Before running a meaningful simulation, configure:
+
+1. Zones and their capacities.
+2. Map boundaries and coordinates.
+3. Connections between zones.
+4. Internal walking paths.
+5. Facilities and their access paths.
+6. Events and expected visitor demand.
+7. Historical attendance records.
+
+Simulations and forecasts depend on these inputs.
+
+The repository does not include an automated first-admin bootstrap or a complete seeded Expo venue database.
+
+An authorized admin account and connected venue data must be initialized for a fresh local environment.
+
+---
+
+## 🔗 Selected REST API Endpoints
+
+All application endpoints below are prefixed with `/api/v1`.
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
 | `POST` | `/visitor/register` | Register a visitor |
-| `GET` | `/visitor/my-qr-code` | Generate the current visitor's QR image |
-| `POST` | `/zone-visit/check-in/{zoneId}` | Check in using a QR token |
-| `PUT` | `/zone-visit/check-out/{zoneId}` | Check out using a QR token |
-| `POST` | `/simulation/run/{id}` | Run a crowd simulation |
-| `POST` | `/simulation/continue/{id}` | Continue a completed simulation |
-| `GET` | `/ai/predict/{simulationId}/{zoneId}` | Predict congestion |
-| `GET` | `/ai/early-warnings/{simulationId}` | Get early warnings |
+| `GET` | `/visitor/my-qr-code` | Generate the authenticated visitor's QR image |
+| `POST` | `/zone-visit/check-in/{zoneId}` | Record a visitor's zone entry from QR token |
+| `PUT` | `/zone-visit/check-out/{zoneId}` | Record a visitor's zone exit |
+| `GET` | `/zone-visit/occupancy/{zoneId}` | Retrieve recorded active occupancy |
+| `GET` | `/zone/get` | Retrieve mapped zones |
+| `GET` | `/zone-connection/get` | Retrieve connections between zones |
+| `GET` | `/zone-walk-path/get-active-by-zone/{zoneId}` | Get active internal walking paths |
+| `GET` | `/facility-access-path/get-active-by-facility/{facilityId}` | Get facility access paths |
+| `GET` | `/expo-event/get-upcoming` | Browse upcoming events |
+| `POST` | `/simulation/run/{id}` | Execute a configured simulation |
+| `POST` | `/simulation/continue/{id}` | Continue a simulation |
+| `GET` | `/simulation-snapshot/get-by-simulation/{simulationId}` | Retrieve simulation snapshots |
+| `GET` | `/ai/predict/{simulationId}/{zoneId}` | Predict zone congestion from snapshots |
+| `GET` | `/ai/early-warnings/{simulationId}` | Retrieve simulation-based early warnings |
 | `POST` | `/routes/recommend` | Request a recommended route |
+| `GET` | `/prayer/today` | Retrieve daily prayer times |
 
-Some endpoints require authentication and organizer/admin privileges. For complete request and response details, refer to the controllers and DTOs under `src/main/java/com/example/mergab/`.
+The API includes additional CRUD and operational endpoints.
 
-## Testing
+See the `Controller/` and `DTO/` packages for complete request formats and access rules.
 
-**Java tests** (from the repository root):
+---
+
+## 🧪 Testing
+
+### Java / Spring Boot
 
 ```powershell
 .\mvnw.cmd test
 ```
 
-**Python tests** (inside `mirqab-ai/`):
+### Python / FastAPI
 
 ```powershell
-python -m pytest -v
+cd mirqab-ai
+.\.venv\Scripts\python.exe -m pytest -v
 ```
 
-The repository contains Java tests for crowd movement, event-driven simulations, routing, prayer movement, and simulation integration, in addition to Python prediction tests. The team also uses Postman for API checks.
+Tests are included for:
 
-## Project Status
+- Simulation movement.
+- Event arrivals.
+- Route finding.
+- Historical demand scaling.
+- Prayer-aware movement.
+- Python prediction logic.
 
-**Functional hackathon prototype — active integration.**
+These commands run the available tests. No unverified coverage or predictive-accuracy percentage is claimed.
 
-The uploaded code includes the organizer and visitor experiences, operational backend, simulation engine, QR attendance APIs, reporting, and a packaged prediction service. Work continues on frontend/backend integration, further AI capabilities, simulation refinements, and deployment.
+---
 
-**Next README update:** Add final application screenshots, a hosted demo link (if deployed), merged AI features, and measured evaluation results. Features and metrics will be added only once available in the final project version.
+## 👥 Meet Team OMINX
 
-** | Backend development, organizer interface, and integration |
+Four developers from **Tuwaiq Academy**, collaborating across full-stack software development and artificial intelligence.
 
+| Team Member | Contribution |
+| :--- | :--- |
+| **Lama Alharbi — لمى الحربي** | Backend & Frontend Development |
+| **Dana Alshammari — دانة الشمري** | Backend & Frontend Development |
+| **Razan Al Madan — رزان آل مدن** | AI & Machine Learning |
+| **Dana Alsahli — دانه السهلي** | AI & Machine Learning |
 
-## Meet the Team
-
-### Team OMINX
-
-We are four developers from Tuwaiq Academy, working together to build MERGAB for the Expo 2030 Challenge.
-
-| Team Member | Role |
-|---|---|
-| Lama Alharbi (لمى الحربي) | Backend & Frontend Developer |
-| Dana Alshammari (دانة الشمري) | Backend & Frontend Developer |
-| Razan Al Madan (رزان آل مدن) | AI & Machine Learning Developer |
-| Dana Alsahli (دانه السهلي) | AI & Machine Learning Developer |
-
-### Our Bootcamp
-
-**Tuwaiq Academy | أكاديمية طويق**
+### Bootcamp
 
 **معسكر تطوير مواقع الويب باستخدام جافا ودمج تقنيات الذكاء الاصطناعي**
 
-*Web Development Using Java and AI Integration Bootcamp*
+*Web Development Using Java and AI Integration Bootcamp — Tuwaiq Academy*
 
-All four team members are participants in the same bootcamp, combining full-stack web development and artificial intelligence to build innovative solutions for real-world challenges.
+---
 
-| **دانة الشمري** | Backend development and visitor interface |
-| **رزان آل مدن** | AI models and data workflows |
-| **دانه السهلي** | AI models and data workflows |
+## 📌 Project Scope
+
+MERGAB is a **functional academic/challenge prototype**, designed to demonstrate how connected venue data, crowd-flow modeling, predictive indicators, and visitor navigation can support large-event operations.
+
+Its sample venue content and metrics are illustrative; they are **not official Expo Riyadh 2030 operational data**.
+
+Production deployment would require further validation, security hardening, and infrastructure planning.
 
 ---
 
 <div align="center">
 
-**Mergab — From crowd awareness to proactive decisions.**
+### MERGAB | مِرقاب
 
-*Developed as a prototype for the Expo 2030 challenge; not an official Expo operating system.*
+**From crowd awareness to proactive decisions.**
+
+*Created for the Expo 2030 Challenge.*
+
+*Not affiliated with or endorsed by Expo Riyadh 2030.*
 
 </div>
